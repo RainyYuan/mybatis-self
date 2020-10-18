@@ -40,7 +40,7 @@ public class UserDaoImpl implements UserDao {
 			connection = dataSource.getConnection();
 
 			// 定义sql语句 ?表示占位符
-			String sql = "select * from user where  username= ?";
+			String sql = "select * from user where  username rlike ?";
 
 			// 获取预处理 statement
 			preparedStatement = connection.prepareStatement(sql);

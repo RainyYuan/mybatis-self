@@ -9,19 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bean.xml</artifactId>
-
+    <artifactId>spring-framwork-custom1.7</artifactId>
     <dependencies>
         <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.8.13</version>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.ygy.mybatis</groupId>
-            <artifactId>spring-framwork-custom1.7</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>jaxen</groupId>-->
+            <!--<artifactId>jaxen</artifactId>-->
+            <!--<version>1.1.6</version>-->
+            <!--<type>bundle</type>-->
+        <!--</dependency>-->
     </dependencies>
 
 </project>

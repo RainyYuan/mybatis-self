@@ -1,4 +1,4 @@
-package com.kkb.spring.ioc;
+package com.kkb.spring.config;
 
 /**
  * 封装<bean>标签中子标签<property>的value属性值

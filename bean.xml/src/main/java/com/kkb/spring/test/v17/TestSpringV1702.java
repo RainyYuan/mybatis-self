@@ -61,14 +61,19 @@ public class TestSpringV1702 {
 
 
     private void parseConfiguration(Element rootElement) {
-        Element beans = rootElement.element("beans");
-        parseBeans(beans);
+        List<Element> sonElements = rootElement.elements();
+        parseBeans(sonElements);
     }
 
-    private void parseBeans(Element beans) {
-        List<Element> elements = beans.elements("bean");
-        for(Element bean:elements){
-            parseBeanDefinition(bean);
+    private void parseBeans(List<Element> sonElements) {
+        for(Element bean:sonElements){
+            if(bean.getName().equals("bean")){
+                //解析bean标签
+                parseBeanDefinition(bean);
+            }else{
+                //解析其他标签
+            }
+
 
         }
     }
@@ -95,7 +100,9 @@ public class TestSpringV1702 {
 
             if(value!=null){
                 Class<?> targetType = resoleTargetType(thisBeanDefinition,name);//反射获取属性的类别
-                propertyValues.add(new PropertyValue(name,new TypedStringValue(value,targetType)));
+                TypedStringValue typedStringValue = new TypedStringValue(value);
+                typedStringValue.setTargetType(targetType);
+                propertyValues.add(new PropertyValue(name,typedStringValue));
             }else if(ref!=null){
                 propertyValues.add(new PropertyValue(name,new RuntimeBeanReference(ref)));
             }
